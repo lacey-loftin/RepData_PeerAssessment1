@@ -15,7 +15,7 @@ total.steps <- tapply(data$steps, data$date, FUN=sum, na.rm = TRUE)
 hist(total.steps, main="Histogram of total number of steps per day", xlab="Total number of steps in a day") + theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+![](/lacey-loftin/RepData_PeerAssessment1/raw/master/figure/1-total_number_of_steps_per_day.png)<!-- -->
 
 ```
 ## NULL
@@ -51,7 +51,7 @@ ggplot(data=averages, aes(x=interval, y=steps)) +
     theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](/lacey-loftin/RepData_PeerAssessment1/raw/master/figure/4-average_number_of_steps-taken_all_day.png)<!-- -->
 ## On average across all the days in the dataset, the 5-minute interval contains the maximum number of steps?
 
 ```r
@@ -103,7 +103,7 @@ total.steps <- tapply(filled.data$steps, filled.data$date, FUN=sum)
 hist(total.steps, xlab="Total Number Steps Taken Each Day", main = "Total Number of Steps Taken Each Day") + theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](/lacey-loftin/RepData_PeerAssessment1/raw/master/figure/7-total-number-of-steps-taken-each-day.png)<!-- -->
 
 ```
 ## NULL
@@ -157,5 +157,5 @@ ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
     xlab("5-minute interval") + ylab("Number of steps") + ggtitle("Weekdays VS Weekends") + theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](/lacey-loftin/RepData_PeerAssessment1/raw/master/figure/8-weekdays-vs-weekends.png)<!-- -->
 
