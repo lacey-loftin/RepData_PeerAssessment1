@@ -12,7 +12,9 @@ data <- read.csv("activity.csv")
 ```r
 library(ggplot2)
 total.steps <- tapply(data$steps, data$date, FUN=sum, na.rm = TRUE)
-hist(total.steps, main="Histogram of total number of steps per day", xlab="Total number of steps in a day") + theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
+hist(total.steps, main="Histogram of total number of steps per day", 
+                  xlab="Total number of steps in a day") + 
+                  theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
 ![](/figure/1-total_number_of_steps_per_day.png)<!-- -->
@@ -45,10 +47,10 @@ library(ggplot2)
 averages <- aggregate(x=list(steps=data$steps), by=list(interval=data$interval),
                       FUN=mean, na.rm=TRUE)
 ggplot(data=averages, aes(x=interval, y=steps)) + 
-    geom_line() + xlab("5-Minute Interval") + 
-    ylab("Average Nnumber of Steps Taken") + 
-    ggtitle("Average Number of Steps Taken All Day") + 
-    theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
+      geom_line() + xlab("5-Minute Interval") + 
+      ylab("Average Nnumber of Steps Taken") + 
+      ggtitle("Average Number of Steps Taken All Day") + 
+      theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
 ![](/figure/4-average_number_of_steps-taken_all_day.png)<!-- -->
@@ -100,7 +102,8 @@ filled.data$steps <- mapply(fill.value, filled.data$steps, filled.data$interval)
 ## the new data set
 total.steps <- tapply(filled.data$steps, filled.data$date, FUN=sum)
 ## histogram
-hist(total.steps, xlab="Total Number Steps Taken Each Day", main = "Total Number of Steps Taken Each Day") + theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
+hist(total.steps, xlab="Total Number Steps Taken Each Day", main = "Total Number of Steps Taken Each Day") + 
+                  theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
 ![](/figure/7-total-number-of-steps-taken-each-day.png)<!-- -->
@@ -153,8 +156,12 @@ on weekdays vs weekends.
 
 ```r
 averages <- aggregate(steps ~ interval + day, data=filled.data, mean)
-ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
-    xlab("5-minute interval") + ylab("Number of steps") + ggtitle("Weekdays VS Weekends") + theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
+ggplot(averages, aes(interval, steps)) + 
+      geom_line() + facet_grid(day ~ .) +
+      xlab("5-minute interval") + 
+      ylab("Number of steps") + 
+      ggtitle("Weekdays VS Weekends") + 
+      theme(plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5))
 ```
 
 ![](/figure/8-weekdays-vs-weekends.png)<!-- -->
