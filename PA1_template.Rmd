@@ -1,5 +1,5 @@
 ---
-title: "Peer-graded Assignment: Course Project 1"
+title: 'Peer-graded Assignment: Course Project 1'
 output: html_document
 ---
 ## Author: Lacey Glencora Loftin 
