@@ -1,6 +1,6 @@
 ##"Peer-graded Assignment: Course Project 1"
 
-  #### Author: Lacey Glencora Loftin 
+#### Author: Lacey Glencora Loftin 
   
 ## Loading and preprocessing the data:
 
